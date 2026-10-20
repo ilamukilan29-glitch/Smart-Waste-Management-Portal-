@@ -1,0 +1,372 @@
+/* ==========================================================================
+   SMART WASTE MANAGEMENT AND COLLECTION OPTIMIZATION SYSTEM
+   Municipal Operations UI Design System (CSS3)
+   ========================================================================== */
+
+:root {
+    --primary: #10b981;
+    --primary-dark: #059669;
+    --primary-darker: #047857;
+    --primary-light: #d1fae5;
+    --primary-subtle: #ecfdf5;
+
+    --slate-900: #0f172a;
+    --slate-800: #1e293b;
+    --slate-700: #334155;
+    --slate-600: #475569;
+    --slate-500: #64748b;
+    --slate-200: #e2e8f0;
+    --slate-100: #f1f5f9;
+    --slate-50:  #f8fafc;
+
+    --critical: #ef4444;
+    --critical-subtle: #fee2e2;
+    --high: #f59e0b;
+    --high-subtle: #fef3c7;
+    --medium: #0ea5e9;
+    --medium-subtle: #e0f2fe;
+    --low: #10b981;
+    --low-subtle: #d1fae5;
+
+    --sidebar-width: 260px;
+    --header-height: 64px;
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--slate-50);
+    color: var(--slate-800);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Sidebar Navigation */
+.app-sidebar {
+    width: var(--sidebar-width);
+    background-color: var(--slate-900);
+    color: #fff;
+    min-height: 100vh;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    overflow-y: auto;
+    transition: all 0.3s ease;
+}
+
+.sidebar-brand {
+    padding: 1.25rem 1.5rem;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-brand .brand-icon {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 800;
+}
+
+.sidebar-nav {
+    padding: 1rem 0;
+}
+
+.nav-section-title {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--slate-500);
+    font-weight: 700;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.7rem 1.5rem;
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    border-left: 3px solid transparent;
+}
+
+.sidebar-link:hover {
+    color: #fff;
+    background-color: var(--slate-800);
+}
+
+.sidebar-link.active {
+    color: #fff;
+    background-color: rgba(16, 185, 129, 0.15);
+    border-left-color: var(--primary);
+    font-weight: 600;
+}
+
+.sidebar-link .badge {
+    margin-left: auto;
+}
+
+/* Main Content Area */
+.app-main {
+    margin-left: var(--sidebar-width);
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.app-navbar {
+    height: var(--header-height);
+    background-color: #fff;
+    border-bottom: 1px solid var(--slate-200);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.app-content {
+    padding: 2rem;
+    flex: 1;
+}
+
+.app-footer {
+    background-color: #fff;
+    border-top: 1px solid var(--slate-200);
+    padding: 1rem 2rem;
+    color: var(--slate-500);
+    font-size: 0.85rem;
+}
+
+/* Metric Cards */
+.metric-card {
+    background: #fff;
+    border: 1px solid var(--slate-200);
+    border-radius: var(--radius-md);
+    padding: 1.25rem 1.5rem;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.metric-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.metric-icon-box {
+    width: 48px;
+    height: 48px;
+    border-radius: var(--radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+.metric-val {
+    font-size: 1.85rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--slate-900);
+}
+
+.metric-label {
+    font-size: 0.85rem;
+    color: var(--slate-500);
+    font-weight: 500;
+    margin-bottom: 0.25rem;
+}
+
+/* Fill Level Progress Bars */
+.fill-progress-container {
+    height: 10px;
+    background-color: var(--slate-200);
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+}
+
+.fill-progress-bar {
+    height: 100%;
+    transition: width 0.4s ease;
+    border-radius: 5px;
+}
+
+.fill-bar-critical {
+    background: linear-gradient(90deg, #f87171, #ef4444);
+    animation: pulse-critical 2s infinite ease-in-out;
+}
+
+.fill-bar-high {
+    background: linear-gradient(90deg, #fbbf24, #f59e0b);
+}
+
+.fill-bar-medium {
+    background: linear-gradient(90deg, #38bdf8, #0ea5e9);
+}
+
+.fill-bar-low {
+    background: linear-gradient(90deg, #34d399, #10b981);
+}
+
+@keyframes pulse-critical {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+/* Status Badges */
+.badge-priority-critical {
+    background-color: var(--critical-subtle);
+    color: #991b1b;
+    font-weight: 600;
+    border: 1px solid #fecaca;
+}
+
+.badge-priority-high {
+    background-color: var(--high-subtle);
+    color: #92400e;
+    font-weight: 600;
+    border: 1px solid #fde68a;
+}
+
+.badge-priority-medium {
+    background-color: var(--medium-subtle);
+    color: #075985;
+    font-weight: 600;
+    border: 1px solid #bae6fd;
+}
+
+.badge-priority-low {
+    background-color: var(--low-subtle);
+    color: #065f46;
+    font-weight: 600;
+    border: 1px solid #a7f3d0;
+}
+
+/* Cards & Tables */
+.card-municipal {
+    background: #fff;
+    border: 1px solid var(--slate-200);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    margin-bottom: 1.5rem;
+}
+
+.card-municipal .card-header {
+    background: #fff;
+    border-bottom: 1px solid var(--slate-200);
+    padding: 1rem 1.5rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.table-municipal th {
+    background-color: var(--slate-50);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--slate-600);
+    font-weight: 700;
+    border-bottom: 1px solid var(--slate-200);
+    padding: 0.75rem 1rem;
+}
+
+.table-municipal td {
+    padding: 0.85rem 1rem;
+    vertical-align: middle;
+    font-size: 0.9rem;
+    border-bottom: 1px solid var(--slate-100);
+}
+
+/* Timeline Route Stops */
+.route-timeline {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.route-timeline::before {
+    content: '';
+    position: absolute;
+    left: 11px;
+    top: 15px;
+    bottom: 20px;
+    width: 2px;
+    background-color: var(--slate-200);
+}
+
+.route-stop-item {
+    position: relative;
+    margin-bottom: 1.25rem;
+}
+
+.route-stop-pin {
+    position: absolute;
+    left: -2rem;
+    top: 4px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 2px solid var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--primary-dark);
+}
+
+.route-stop-pin.depot {
+    border-color: var(--slate-800);
+    background-color: var(--slate-800);
+    color: #fff;
+}
+
+/* Print Styles */
+@media print {
+    .app-sidebar, .app-navbar, .no-print, .btn, form {
+        display: none !important;
+    }
+    .app-main {
+        margin-left: 0 !important;
+    }
+    .app-content {
+        padding: 0 !important;
+    }
+    body {
+        background-color: #fff;
+        color: #000;
+    }
+    .card-municipal {
+        border: none;
+        box-shadow: none;
+    }
+}
